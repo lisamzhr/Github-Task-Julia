@@ -4,21 +4,24 @@ int main(){
     //deklarasi variabel
     float a, b, result;
     char symbol, sign = 'a';
-    printf("Selamat datang di kalkulator Julia");
-    printf("\nKalkulator ini dapat mengkalkulasikan perhitungan yang diinginkan");
-    printf("\nAturan yang dapat dilakukan: ");
-    printf("\n1. Jika penjumlahan (+) ");
-    printf("\n2. Jika pengurangan (-) ");
-    printf("\n3. Jika perkalian (*) ");
-    printf("\n4. Jika pembagian (/) ");
-    printf("Contoh Input: 4 * 5 ");
-     //buat loop kalkulator
 
+    // UI pembuka
+    printf("Selamat datang di Kalkulator Julia\n");
+    printf("Kalkulator ini dapat mengkalkulasikan perhitungan yang diinginkan\n");
+    printf("Aturan yang dapat dilakukan:\n");
+    printf("1. Jika penjumlahan (+)\n");
+    printf("2. Jika pengurangan (-)\n");
+    printf("3. Jika perkalian (*)\n");
+    printf("4. Jika pembagian (/)\n");
+    printf("Contoh Input: 4 * 5\n");
+
+    // buat loop kalkulator
     do
     {
         printf("\nMasukkan Persamaan: ");
         scanf("%f %c %f", &a, &symbol, &b);
-        //ini dibuat functiomn jg bole, pokoknya diubah kodenya
+
+        // proses perhitungan
         switch (symbol){
             case '+':
                 result = a + b;
@@ -32,17 +35,22 @@ int main(){
             case '/':
                 if (b != 0){
                     result = a / b;
+                } else {
+                    printf("Error: Tidak bisa membagi dengan nol!\n");
+                    continue;
                 }
-                //nikinin else sm ui knp gabole
                 break;
             default:
-                //buat printf unknown atau invalid symbol
-                break;
+                printf("Error: Simbol '%c' tidak dikenal. Gunakan +, -, *, atau /.\n", symbol);
+                continue;
         }
-        //rapihin printfnya biar ui nya bagus
-        printf("%.2f\n", result);
-        //buatin printf lainjut atau ga
+
+        // tampilkan hasil
+        printf("Hasil: %.2f %c %.2f = %.2f\n", a, symbol, b, result);
+
+        // tanya lanjut atau tidak
         scanf(" %c", &sign);
+
     } while (sign == 'Y' || sign == 'y');
     return 0;
 }
