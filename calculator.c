@@ -4,10 +4,19 @@ int main(){
     //deklarasi variabel
     float a, b, result;
     char symbol, sign = 'a';
-    //buat loop kalkulator
+    printf("Selamat datang di kalkulator Julia");
+    printf("\nKalkulator ini dapat mengkalkulasikan perhitungan yang diinginkan");
+    printf("\nAturan yang dapat dilakukan: ");
+    printf("\n1. Jika penjumlahan (+) ");
+    printf("\n2. Jika pengurangan (-) ");
+    printf("\n3. Jika perkalian (*) ");
+    printf("\n4. Jika pembagian (/) ");
+    printf("Contoh Input: 4 * 5 ");
+     //buat loop kalkulator
+
     do
     {
-        //buatin printf perintah masukin tiap karakternya
+        printf("\nMasukkan Persamaan: ");
         scanf("%f %c %f", &a, &symbol, &b);
         //ini dibuat functiomn jg bole, pokoknya diubah kodenya
         switch (symbol){
