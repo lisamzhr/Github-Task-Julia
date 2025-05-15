@@ -1,9 +1,10 @@
 #include<stdio.h>
 
 int main(){
-    //deklarasi variabel
+    // deklarasi variabel
     float a, b, result;
     char symbol, sign = 'a';
+    int valid = 0;
 
     // UI pembuka
     printf("Selamat datang di Kalkulator Julia\n");
@@ -16,10 +17,10 @@ int main(){
     printf("Contoh Input: 4 * 5\n");
 
     // buat loop kalkulator
-    do
-    {
+    do {
         printf("\nMasukkan Persamaan: ");
         scanf("%f %c %f", &a, &symbol, &b);
+        valid = 1;
 
         // proses perhitungan
         switch (symbol){
@@ -36,21 +37,28 @@ int main(){
                 if (b != 0){
                     result = a / b;
                 } else {
+                	valid = 0;
                     printf("Error: Tidak bisa membagi dengan nol!\n");
                     continue;
                 }
                 break;
             default:
+            	valid = 0;
                 printf("Error: Simbol '%c' tidak dikenal. Gunakan +, -, *, atau /.\n", symbol);
                 continue;
         }
 
         // tampilkan hasil
-        printf("Hasil: %.2f %c %.2f = %.2f\n", a, symbol, b, result);
+        if (valid == 1){
+    	    printf("Hasil: %.2f %c %.2f = %.2f\n", a, symbol, b, result);}
 
         // tanya lanjut atau tidak
+        printf("Apakah Anda ingin menghitung lagi? (Y/N): ");
         scanf(" %c", &sign);
 
     } while (sign == 'Y' || sign == 'y');
+
+    printf("Terima kasih telah menggunakan Kalkulator Julia!\n");
     return 0;
 }
+

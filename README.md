@@ -6,3 +6,5 @@ membuat struktur kode dan flow algoritma nya
 intruksi pada kalkulator, membenarkan UI
 ## third commit - puti
 penanganan pembagian dengan nol, penanganan simbol tidak valid
+## Fourth Commit - ariq
+perbaikan beberapa kode, serta menambahkan fungsi ingin lanjut atau tidak
